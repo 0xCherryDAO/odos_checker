@@ -5,7 +5,6 @@ from loguru import logger
 from rich.console import Console
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
-from eth_account import Account as ETHAccount
 
 from config import MOBILE_PROXY, PAUSE_BETWEEN_WALLETS, ROTATE_IP
 from src.checker.odos_checker import Checker
