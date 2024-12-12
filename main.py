@@ -2,7 +2,9 @@ from asyncio import run, set_event_loop_policy
 import asyncio
 import logging
 import sys
+import random
 
+from config import SHUFFLE_WALLETS
 from src.utils.data.helper import addresses
 
 from src.utils.runner import process_checker
@@ -16,6 +18,8 @@ if sys.platform == 'win32':
 
 
 async def main() -> None:
+    if SHUFFLE_WALLETS:
+        random.shuffle(addresses)
     await process_checker(addresses)
 
 
