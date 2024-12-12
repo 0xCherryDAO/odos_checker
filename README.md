@@ -17,3 +17,8 @@ python main.py
 addresses.txt - одна строка - один адресс
 proxies.txt - прокси в формате login:pass@ip:port / либо login:pass@ip:port|change_link
 ```
+
+<h2>Результаты</h2>
+```
+Результаты сохраняются в Excel файл
+```
