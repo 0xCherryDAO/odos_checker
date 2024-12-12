@@ -30,7 +30,7 @@ async def process_checker(addresses: list[str]):
     workbook = Workbook()
     console = Console()
     sheet = workbook.active
-    sheet.title = "Superform Data"
+    sheet.title = "Odos Data"
 
     headers = [
         "address",
