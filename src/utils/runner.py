@@ -1,5 +1,5 @@
 import random
-from asyncio import sleep, gather
+from asyncio import sleep, gather, create_task
 
 from loguru import logger
 from rich.console import Console
@@ -42,7 +42,7 @@ async def process_checker(addresses: list[str]):
         for index, address in enumerate(addresses):
             console.log(f'Checking {address}...')
             proxy_index = index % len(proxies)
-            tasks.append(process_wallet(address, proxy_index))
+            tasks.append(create_task(process_wallet(address, proxy_index)))
             time_to_sleep = random.uniform(PAUSE_BETWEEN_WALLETS[0], PAUSE_BETWEEN_WALLETS[1])
             if time_to_sleep != 0:
                 console.log(f'Sleeping {time_to_sleep:.2f} seconds...')
